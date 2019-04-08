@@ -4,6 +4,11 @@ import matplotlib.pyplot as plt
 
 class FlowStats(object):
     def __init__(self, pred_flow, true_flow):
+        """ Class to compute end point error (EPE), Angular error and Fl score for flow fields.
+
+        :param pred_flow: Flow field estimate
+        :param true_flow: True flow field
+        """
         super(FlowStats, self).__init__()
         self.pred = pred_flow
         self.true = true_flow
