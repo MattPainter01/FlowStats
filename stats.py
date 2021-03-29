@@ -52,7 +52,7 @@ class FlowStats(object):
         dot_prod = np.einsum('ij,ij->i', unit_pred, unit_true)
         angles = np.arccos(np.clip(dot_prod, -1.0, 1.0))
         if len(self.pred.shape) > 2:
-            angles = angles.reshape(self.pred.shape[0], *self.pred.shape[2:])
+            angles = angles.reshape(self.pred.shape[0], self.pred.shape[1])
         return angles
 
     def get_fl_score(self, pix=3, perc=5, per_img=False):
